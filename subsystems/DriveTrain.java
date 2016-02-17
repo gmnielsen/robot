@@ -12,6 +12,7 @@ import edu.wpi.first.wpilibj.command.Subsystem;
 import edu.wpi.first.wpilibj.livewindow.LiveWindow;
 import org.usfirst.frc.team5265.robot.Robot;
 import org.usfirst.frc.team5265.robot.commands.TankDriveWithJoystick;
+import org.usfirst.frc.team5265.robot.commands.GoArcade;
 import edu.wpi.first.wpilibj.smartdashboard.SmartDashboard;
 
 /**
@@ -35,8 +36,8 @@ public class DriveTrain extends Subsystem {
 		back_right_motor = new Talon(4);
 		drive = new RobotDrive(front_left_motor, back_left_motor,
 							   front_right_motor, back_right_motor);
-		left_encoder = new Encoder(1, 2);
-		right_encoder = new Encoder(3, 4);
+		left_encoder = new Encoder(1,2);
+		right_encoder = new Encoder(3,4);
 
 		// Encoders may measure differently in the real world and in
 		// simulation. In this example the robot moves 0.042 barleycorns
@@ -71,9 +72,14 @@ public class DriveTrain extends Subsystem {
 	 * using the PS3 joystick.
 	 */
 	public void initDefaultCommand() {
-		setDefaultCommand(new TankDriveWithJoystick());
+		setDefaultCommand(new GoArcade());
 	}
 
+	public void GoArcade(Joystick joy) {
+    	drive.arcadeDrive(joy);    		
+	}
+    
+	
 	/**
 	 * The log method puts interesting information to the SmartDashboard.
 	 */

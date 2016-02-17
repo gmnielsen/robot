@@ -48,6 +48,10 @@ public class OI {
      // r2.whenPressed(new Pickup());
      // l1.whenPressed(new Place());
      // l2.whenPressed(new Autonomous());
+    	
+    	JoystickButton buttonForward = new JoystickButton(joy, 5);
+        
+
     }
     
     public Joystick getJoystick() {
