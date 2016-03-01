@@ -38,6 +38,11 @@ public class DriveTrain extends Subsystem {
 							   front_right_motor, back_right_motor);
 		left_encoder = new Encoder(1,2);
 		right_encoder = new Encoder(3,4);
+		drive.setInvertedMotor(RobotDrive.MotorType.kFrontLeft, true);
+		drive.setInvertedMotor(RobotDrive.MotorType.kFrontRight, true);
+		drive.setInvertedMotor(RobotDrive.MotorType.kRearLeft, true);
+		drive.setInvertedMotor(RobotDrive.MotorType.kRearRight, true);
+		
 
 		// Encoders may measure differently in the real world and in
 		// simulation. In this example the robot moves 0.042 barleycorns
